@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon" />
+<style>
+	#div1 {
+		height: 200px;
+		width: 200px;
+		background: red;
+		position: relative;
+		animation: myfirst 1s infinite;
+		animation-name: myfirst;
+	}
+	#div2 {
+		height: 100px;
+		width: 100px;
+		background: red;
+		transition: width 0.3s;
+	}
+	#div3 {
+		height: 100px;
+		width: 100px;
+		background: red;
+		overflow: hidden;
+		transition: width 0.3s;
+	}
+	#div2:hover {
+		width: 300px;
+		
+	}
+	#div3:hover  {
+		width: 300px;
+	}
+	.img1 {
+		width: 80px;
+		height: 80px;
+		padding: 10px;
+		border-radius: 50%;
+	}
+	#div2:hover .span {
+		display: block;
+		position: relative;
+		bottom: 65px;
+		left: 100px;
+	}
+	#div3:hover .span {
+		display: block;
+		position: relative;
+		bottom: 65px;
+		left: 100px;
+	}
+	.img2 {
+		width: 80px;
+		height: 80px;
+		padding: 10px;
+		border-radius: 50%;
+	}
+	.span {
+		position: relative;
+		display: none;
+	}
+	@keyframes myfirst {
+			0%   {background: red; left:0px; top:0px;}
+			25%  {background: yellow; left:200px; top:0px;}
+			50%  {background: green; left:200px; top:200px;}
+			75%  {background: purple; left:0px; top:200px;}
+			100% {background: red; left:0px; top:0px;}
+	}
+</style>
+</head>
+<body>
+	<div style="height: 400px;">
+		<div id="div1"></div>
+	</div><hr/>
+	<div id="div2">
+		<img class="img1" src="../imgs/校徽.jpg"/>
+		<span class="span">访客&nbsp;Vister</span>
+	</div>
+	<hr/>
+	<div id="div3">
+		<img class="img2" src="../imgs/own-active.png"/>
+		<span class="span">学生&nbsp;Students</span>
+	</div>
+</body>
+</html>
