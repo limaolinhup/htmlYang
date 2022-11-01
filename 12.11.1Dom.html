@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function copyInp() {
+				var inpVa = document.getElementById("inp").value
+				var inp1Va = document.getElementById("inp1").value = inpVa
+				if(inp1Va.trim().length == 0 || inp1Va == null) {
+					document.getElementById("demo").innerHTML = "复制内容为空"
+				} else {
+					document.getElementById("demo").innerHTML = "复制成功"
+				}
+			}
+
+			function nameInp() {
+				var nameVa = document.getElementById("nameInp").value
+				if (nameVa.trim().length == 0 || nameVa == null) {
+					document.getElementById("spanVa").innerHTML = "未输入名字"
+				} else {
+					document.getElementById("spanVa").innerHTML = ""
+				}
+			}
+
+			function passInp() {
+				var passVa = document.getElementById("passInp").value
+				if (passVa.trim().length == 0 || passVa == null) {
+					document.getElementById("spanVaPa").innerHTML = "未输入密码"
+				} else {
+					document.getElementById("spanVaPa").innerHTML = ""
+				}
+			}
+
+			function regName() {
+				var regNameVa = document.getElementById("regName").value
+				if (regNameVa.trim().length == 0 || regNameVa == null) {
+					document.getElementById("rgSpan").innerHTML = "未输入用户名"
+				} else {
+					document.getElementById("rgSpan").innerHTML = ""
+				}
+			}
+
+			function regPass() {
+				var regPassVa = document.getElementById("regPass").value
+				if (regPassVa.trim().length == 0 || regPassVa == null) {
+					document.getElementById("rgSpanPass").innerHTML = "未输入密码"
+				} else if (regPassVa.length < 6) {
+					document.getElementById("rgSpanPass").innerHTML = "密码小于6位"
+				} else {
+					document.getElementById("rgSpanPass").innerHTML = ""
+				}
+
+
+			}
+
+			function regPassTwo() {
+				var regPassVaT = document.getElementById("regPass").value
+				var regPassTwoVa = document.getElementById("regPassTwo").value
+				if (regPassTwoVa.trim().length == 0 || regPassTwoVa == null) {
+					document.getElementById("rgSpanPassTwo").innerHTML = "未输入二次密码"
+				} else if (regPassVaT == regPassTwoVa) {
+					document.getElementById("rgSpanPassTwo").innerHTML = "密码相同"
+				} else if(regPassVaT != regPassTwoVa) {
+					document.getElementById("rgSpanPassTwo").innerHTML = "两次密码不同"
+				} else {
+					document.getElementById("rgSpanPassTwo").innerHTML = ""
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>对注册页面进行验证</h1>
+		<table>
+			<tr>
+				<td>姓名：</td>
+				<td><input onblur="regName()" id="regName" type="text" /><span id="rgSpan"></span></td>
+			</tr>
+			<tr>
+				<td>第一次密码：</td>
+				<td><input onblur="regPass()" id="regPass" type="text" /><span id="rgSpanPass"></span></td>
+			</tr>
+			<tr>
+				<td>第二次密码：</td>
+				<td><input onblur="regPassTwo()" id="regPassTwo" type="text" /><span id="rgSpanPassTwo"></span></td>
+			</tr>
+		</table>
+		<hr />
+		<input id="inp" type="text" name="name" />&nbsp;&nbsp;
+		<input type="submit" value="复制" onclick="copyInp()" />&nbsp;&nbsp;
+		<input type="text" name="name1" id="inp1" />
+		<p id="demo" style="color: red;"></p>
+		<hr />
+		<table border="1">
+			<tr>
+				<td>姓名：</td>
+				<td><input id="nameInp" onblur="nameInp()" type="text" name="name"><span id="spanVa"></span></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input id="passInp" onblur="passInp()" type="password" name="password"><span id="spanVaPa"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td>
+					<input type="radio" name="sex" checked>
+					<input type="radio" name="sex">
+				</td>
+			</tr>
+			<tr>
+				<td>血型：</td>
+				<td>
+					<input type="radio" name="blood" value="O">O
+					<input type="radio" name="blood" value="A">A
+					<input type="radio" name="blood" value="B">B
+					<input type="radio" name="blood" value="AB">AB
+				</td>
+			</tr>
+			<tr>
+				<td>性格：</td>
+				<td>
+					<input type="checkbox" name="blood" value="热情">热情
+					<input type="checkbox" name="blood" value="大方">大方
+					<input type="checkbox" name="blood" value="多情">多情
+				</td>
+			</tr>
+			<tr>
+				<td>文件：</td>
+				<td>
+					<input type="file" value="打开">
+				</td>
+			</tr>
+			<tr>
+				<td>简介：</td>
+				<td>
+					<input type="text" name="des" />
+				</td>
+			</tr>
+			<tr>
+				<td>城市：</td>
+				<td>
+					<select>
+						<option>四川</option>
+						<option>成都</option>
+						<option>广安</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交" /></td>
+				<td><input type="reset" value="重置" /></td>
+			</tr>
+		</table>
+		<hr />
+
+	</body>
+</html>
